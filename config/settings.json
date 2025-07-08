@@ -1,1 +1,5 @@
- 
+ {
+  "openai_api_key": "sk-your-api-key-here",
+  "wake_word": "aris",
+  "voice_rate": 160
+}
