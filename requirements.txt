@@ -1,0 +1,9 @@
+openai
+pyttsx3
+Flask
+requests
+schedule
+sounddevice
+numpy
+scipy
+openai-whisper

@@ -1,0 +1,40 @@
+<!-- File: server/dashboard.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>ARIS Dashboard</title>
+  <style>
+    body { font-family: Arial; background: #121212; color: white; padding: 20px; }
+    h1, h2 { color: #00ffe1; }
+    .card { background: #1e1e1e; padding: 15px; margin: 10px 0; border-radius: 10px; }
+  </style>
+</head>
+<body>
+  <h1>Welcome to ARIS Dashboard</h1>
+  <h2>Current Time: {{ now }}</h2>
+
+  <div class="card">
+    <h3>Recent Memories</h3>
+    {% for m in memories %}
+      <p><b>{{ m.timestamp }}</b>: {{ m.note }}</p>
+    {% endfor %}
+  </div>
+
+  <div class="card">
+    <h3>Reminders</h3>
+    {% for r in reminders %}
+      <p><b>{{ r.time }}</b>: {{ r.note }}</p>
+    {% endfor %}
+  </div>
+
+  <div class="card">
+    <h3>Add Reminder</h3>
+    <form method="post" action="/add_reminder">
+      <input name="note" placeholder="Reminder note" required>
+      <input name="time" placeholder="YYYY-MM-DD HH:MM" required>
+      <button type="submit">Add</button>
+    </form>
+  </div>
+</body>
+</html>
